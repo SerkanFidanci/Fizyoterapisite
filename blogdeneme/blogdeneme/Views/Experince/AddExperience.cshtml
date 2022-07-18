@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewData["Title"] = "AddExperience";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+ 
+ 
+     
+      
+
+<div class="card bg-white shadow">
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+        <form  method="post">
+    <div class="form-group my-2">
+      <label for="name" class="form-label fw-bolder">İsim</label>
+      <input class="form-control" type="text" id="name" name="Name" required>
+    </div>
+    
+  <div class="form-group my-2">
+    <label for="message" class="form-label fw-bolder">Blog</label>
+      <textarea class="form-control" style="resize: none;" id="summernote" name="Description" rows="4" required></textarea>
+  </div>
+    <div class="form-group my-2">
+      <label for="email" class="form-label fw-bolder">Kullanıcı Fotoğrafı</label>
+      <input class="form-control" type="text" id="İmageUrl" name="İmageUrl" required>
+    </div>
+  <button class="btn btn-primary mt-2" type="submit">Gönder</button>
+
+  
+   
+    </form>
+    <script>
+      $('#summernote').summernote({
+        placeholder: 'Blog Yazısı',
+        tabsize: 2,
+        height: 350,
+      
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'clear']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video']],
+          ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+      });
+    </script>
+</div>
+

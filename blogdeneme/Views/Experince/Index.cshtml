@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@using EntitiyLayer.Concreate
+@model List<Experience>
+<div class="card bg-default shadow">
+                <div class="card-header bg-transparent border-0">
+                  <h3 class="text-white mb-0">Card tables</h3>
+                </div>
+                <div class="table-responsive">
+                  <table class="table align-items-center table-dark table-flush">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Adı</th>
+                        <th scope="col">Tarihi</th>
+                        <th scope="col">Blog</th>
+                        <th scope="col">Sil</th>
+                        <th scope="col">Güncelle</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                @foreach (var item in Model) 
+                {
+                
+                      <tr>
+                        <td>
+                        @item.ExperienceİD
+                        </td>
+                        <td>
+                          @item.Name
+                        </td>
+                        <td>
+                          <span class="badge badge-dot">
+                            @item.Date
+                          </span>
+                        </td>
+                        <td>
+                          <textarea id="w3review" name="w3review" rows="4" cols="50">
+                            @item.Description
+                           </textarea>
+                        </td>
+                        <td>
+                         <a href="/Experince/DeleteExperience/@item.ExperienceİD" class="btn btn-danger">
+                             Sil
+                         </a>
+                        </td>
+                       <td>
+                           <a href="#" class="btn btn-info">
+                               Güncelle
+                           </a>
+                       </td>
+                      </tr>
+                    
+                  
+                  }
+                      
+                    
+                    </tbody>
+                  </table>
+                  <br />
+                <center>   <a href="/Experince/AddExperience" class="btn btn-primary">Yeni Blog EKle</a> </center>
+                <br />
+                <br />
+                
+  
+          
+
